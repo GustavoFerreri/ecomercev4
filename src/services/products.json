@@ -1,0 +1,27 @@
+{
+  "product": [
+    {
+      "id": "bf66bd01-df9e-4bbf-acdf-435b4a358bac",
+      "title": "Spiderman",
+      "price": "115",
+      "img": "https://brainstomping.files.wordpress.com/2017/08/spider-man-homecoming-amazing-fantasy-exclusive-poster-nerdist.jpg?resize=640%2C948",
+      "description": "Spider-Man: Homecoming (Spider-Man: De Regreso a Casa en América Hispana) es una película de superhéroes basada en el superhéroe de Marvel Comics del mismo nombre. Además de ser un reinicio de la franquicia del Hombre Araña, se trata de una secuela de Captain America: Civil War, la décimo sexta entrega del Universo Cinematográfico de Marvel y de la Saga del Infinito, y la cuarta entrega de la Fase Tres. Se estrenó el 7 de julio de 2017 en Estados Unidos."
+    },
+    {
+      "id": "8df43aa5-70d3-45e3-9665-9fe209cb1d8b",
+      "title": "Spiderman 2",
+      "price": "135",
+      "img": "https://tupersonajefavorito.com/wp-content/uploads/2018/06/spiderman-2-afiche.jpg",
+      "description": "Spider-Man 2 (conocida como El Hombre Araña 2 en Hispanoamérica) es una película de superhéroes estadounidense de 2004 dirigida por Sam Raimi y escrita por Alvin Sargent a partir de una historia de Alfred Gough, Miles Millar y Michael Chabon. Basada en el personaje ficticio de Marvel Comics del mismo nombre, es la segunda entrega de la trilogía Spider-Man y una secuela de la película Spider-Man de 2002, protagonizada por Tobey Maguire junto a Kirsten Dunst, James Franco, Alfred Molina, Rosemary Harris y Donna Murphy."
+    },
+    {
+      "id": "dcc08bf0-e0f6-47ee-95e4-bb76a500654a",
+      "title": "Deadpol",
+      "price": "145",
+      "img": "https://es.web.img3.acsta.net/pictures/15/12/04/10/48/099822.jpg",
+      "description": "Deadpool es una película de superhéroes estadounidense basada en el personaje de Marvel Comics del mismo nombre y dirigida por Tim Miller. La película es un spin-off derivado de los X-Men protagonizada por Ryan Reynolds, Morena Baccarin, Ed Skrein, T. J. Miller, Gina Carano, Leslie Uggams, Brianna Hildebrand y Stefan Kapičić. En Deadpool, después de ser sometido a un experimento que deja a Wade Wilson con nuevas habilidades y con un retorcido sentido del humor, Wilson persigue al hombre que casi destrozó su vida. La película se estrenó en IMAX."
+    }
+  ],
+  "chat": [],
+  "cart": []
+}

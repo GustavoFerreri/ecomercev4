@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <form id="formId">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="idText" placeholder="Ingrese el nombre de la pelicula" aria-label="Ingrese el nombre de la pelicula" aria-describedby="basic-addon2">
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Buscar</button>
+            </div>
+        </form>
+    </div>
+    <div class="row wrapper">
+            {{#each products}}
+                {{>itemProduct this}}
+            {{/each}}
+    </div>
+</div>
+
+<script>
+    const formClient = document.getElementById('formId');
+    formClient.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let searchId = document.getElementById('idText').value;
+        let productId= { id: searchId };
+        let productIdJson = JSON.stringify(productId);
+        formClient.action= 'http://localhost:8080/products/'+productIdJson
+        formClient.submit(productIdJson);
+    })
+</script>

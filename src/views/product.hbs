@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row justify-content-end">
+        {{!-- Producto --}}
+        <div class="col-7">
+            <div class="card" style="width: 30rem; margin-top: 60px;">
+            <div class="card-body">
+                    <h5 class="card-title">Cargar nuevos productos</h5>
+                    <form>
+                        <div class="form-group">
+                                <input type="text" id="title" placeholder="Coloque el Titulo" class="form-control" style="padding: 20px; margin-top: 5px;">
+                                <input type="text" id="price" placeholder="Coloque el Precio" class="form-control" style="padding: 20px; margin-top: 5px;"> 
+                                <input type="text" id="img" placeholder="Coloque la ruta de la imagen" class="form-control" style="padding: 20px; margin-top: 5px;">
+                                <input type="text" id="description" placeholder="Agregue una breve descipcion" class="form-control" style="padding: 20px; margin-top: 5px;">
+                                <button class="btn btn-primary" id="btnCreate" style="padding: 20px; margin-top: 15px;">Cargar nuevo producto</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="container">
+                {{>listProduct}}
+            </div>
+        </div>
+        {{!-- Chat --}}
+        <div class="col-5">
+            <div class="card" style="margin-top: 60px;">
+                <div class="card-body">
+                    <h5 class="card-title">Chat con el Vendedor</h5>
+                    <form>
+                        <div class="form-group">
+                                <div class="row">
+                                    <div class="col-9">
+                                        <input type="text" id="mail" placeholder="Ingrese su mail" class="form-control" style="padding: 20px; margin-top: 5px;">
+                                        <input type="text" id="msgClient" placeholder="Mensaje" class="form-control" style="padding: 20px; margin-top: 5px;"> 
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-success" id="btnChat">Send</button>
+                                    </div>
+                                </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="container">
+                {{>chat}}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const socket = io();
+    socket.on('allProduct',()=>{
+        location.href = '/api';
+    })
+    document.getElementById('btnCreate').addEventListener('click', (e)=>{
+        e.preventDefault();
+        const product = { 
+            title: document.getElementById('title').value,
+            price: document.getElementById('price').value, 
+            img: document.getElementById('img').value, 
+            description: document.getElementById('description').value
+        };
+        console.log(product)
+        socket.emit('createProduct', product);
+    })
+    document.getElementById('btnChat').addEventListener('click', (e)=>{
+        e.preventDefault();
+        let dataObj = {
+            mail: document.querySelector('#mail').value,
+            msgClient: document.querySelector('#msgClient').value
+        }
+        socket.emit('chatClient', dataObj)
+        document.querySelector('#msgClient').value=''
+        return false
+    })
+</script>

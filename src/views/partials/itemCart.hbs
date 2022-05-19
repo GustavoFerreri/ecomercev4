@@ -1,0 +1,21 @@
+<li class="list-group-item">
+    <div class="row">
+        <div class="col-7">{{title}}</div>
+        <div class="col-3">{{price}}</div>
+        <div class="col-2">
+            <a href="#" class="btn btn-danger" id="{{id}}">Eliminar</a>
+        </div>
+    </div>
+</li>
+<script>
+    document.getElementById('{{id}}').addEventListener("click", (e)=>{
+        e.preventDefault();
+        let http = new XMLHttpRequest();
+        let url = 'http://localhost:8080/carts/:id';
+        let method = 'DELETE';
+        http.open(method, url, true);
+        http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        let data = JSON.stringify({"id": "{{id}}"})
+        http.send(data);
+    });
+</script>
